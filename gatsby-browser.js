@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import React from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider } from 'styled-components'
 
-// You can delete this file if you're not using it
+import getPageContext from './src/style'
+
+// eslint-disable-next-line react/prop-types
+export function wrapRootElement({ element }) {
+  const { theme } = getPageContext()
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {element}
+    </ThemeProvider>
+  )
+}
