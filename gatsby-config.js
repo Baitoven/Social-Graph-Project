@@ -33,5 +33,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
+    `gatsby-transformer-json`,
   ],
 }

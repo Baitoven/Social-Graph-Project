@@ -11,14 +11,14 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-        allFile {
-            edges {
-                node {
-                    id
-                    name
-                }
-            }
+      allFile {
+        edges {
+          node {
+            id
+            name
+          }
         }
+      }
     }
   `) 
 }

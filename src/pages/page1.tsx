@@ -11,6 +11,7 @@ export default function Page1(props: TProps) {
     <Layout>
       <h1>Section page template</h1>
       <p>put some text here</p>
+      <p>here is a test of </p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
