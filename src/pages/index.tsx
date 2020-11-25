@@ -8,13 +8,11 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <h1>Home Page</h1>
+      <p>Welcome to the site.</p>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
-      <Link to="/page1/">Go to page1</Link>
     </Layout>
   )
 }

@@ -14,17 +14,21 @@ export default function Header(props: TProps) {
   return (
     <CustomHeader>
       <MainContainer>
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
+        <LinkContainer>
+          <CustomLink to="/">
             {siteTitle}
-          </Link>
-        </h1>
+          </CustomLink>
+        </LinkContainer>
+        <LinkContainer>
+          <CustomLink to="/page1">
+            Page1
+          </CustomLink>
+        </LinkContainer>
+        <LinkContainer>
+          <CustomLink to="/page2">
+            Page2
+          </CustomLink>
+        </LinkContainer>
       </MainContainer>
     </CustomHeader>
   )
@@ -33,11 +37,20 @@ export default function Header(props: TProps) {
 const MainContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 900px;
   padding: 1.45rem 1.0875rem;
 `
 
 const CustomHeader = styled.header`
   margin-bottom: 1.45rem;
-  background-color: rebeccapurple;
+  background-color: #1a1a5a;
+`
+
+const CustomLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`
+
+const LinkContainer = styled.h1`
+  margin: 0 20px 0 0;
 `

@@ -28,12 +28,7 @@ module.exports = {
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: process.env.NODE_ENV !== 'production',
-      },
-    },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
