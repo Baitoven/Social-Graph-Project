@@ -2,21 +2,19 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-interface IProps {
-  siteTitle: string,
-}
+interface IProps {}
 
 type TProps = IProps
 
 export default function Header(props: TProps) {
-  const { siteTitle } = props
+  //const {  } = props
 
   return (
     <CustomHeader>
       <MainContainer>
         <LinkContainer>
           <CustomLink to="/">
-            {siteTitle}
+            Home
           </CustomLink>
         </LinkContainer>
         <LinkContainer>
