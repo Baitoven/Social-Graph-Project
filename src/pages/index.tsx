@@ -4,7 +4,7 @@ import * as vis from 'vis'
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import image1 from "../images/degree_distr.png"
 
 export default function IndexPage() {
   /*const { allDataJson: { edges: result1, nodes: result2} } = useStaticQuery(graphql`
@@ -400,7 +400,6 @@ export default function IndexPage() {
     
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("draw")
       draw()
     }, 50);
     return () => clearTimeout(timer);
@@ -408,23 +407,33 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <h1>Home Page</h1>
-      <p>Welcome to the site.</p>
-      <p>Site organisation might be :</p>
-      <ul>
-        <li>Home page : presentation and overview of the graph</li>
-        <li>Word clouds made out of the comments</li>
-        <li>Sentiment analysis & results</li>
-        <li>About us & downloads/link to notebooks/git</li>
-      </ul>
+      <h1>Motivation</h1>
+      <p>At the beginning of the project, many different ideas had been discussed. At the end, we found out that the best solution was creating a network about the games. There are many reasons to choose this solution. First of all, Steam has good and intuitively API to retrieve the data. With Steam and SteamWorks API we were able to retrieve both the data of the games (e.g. number of active users, genres, categories...) and data to perform text analysis (e.g. descriptions and comments for each game). Unfortunately (or actually fortunately, depends on the point of view!) it is not possible to retrieve data on the specific users for privacy reasons. For this reason, it is not possible to know, for example, the list of the users that play a specific game. Secondly, we are interested in the argument and we were curiosed about what we would have been able to understand. Lastly, it is a topic not as common as others, like for example films or songs.</p>
+      <h2>The goals</h2>
+      <p>The goals of the project are different. Firstly, we want to understand if the network has some common structure, i.e. random or scale-free. Secondly, we want to study if there are meaningful communities inside the games network, based on the characteristic of the games (e.g. genres). Then, we want to perform NLP on the comments of the games, in order to understand the sentiments for the games and for the communitites, as well as find the specific words for each community.</p>
+      
+      
+      <h2>The Graph</h2>
       <NetworkContainer id="mynetwork" />
-      <p>Relations between the characters of &quot;Les miserables&quot;.</p>
+      <h2>General analysis of the topology</h2>
+      <p>To start the analysis of the network, we wanted to study its topology, in order to understand better what we were working with. To do that, we analysed the degree distribution as well as other general properties as the average length and the average global clustering coefficient. At the end, we discovered that the properties of this network are really strange, as they don't follow none of the predictions done at each step. This confused us a lot and we think that the knowledges provided during the course are not enough to understand deeply the topology of the graph.</p>
+      <ImageContainer>
+        <img src={image1} />
+      </ImageContainer>
+      <p>degree distribution graph</p>
     </Layout>
   )
 }
 
 const NetworkContainer = styled.div`
-  width: 900px;
+  width: 100%;
   height: 900px;
   border: 1px solid lightgray;
+`
+
+const ImageContainer = styled.div`
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  //flex-wrap: wrap;
 `

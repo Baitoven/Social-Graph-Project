@@ -19,12 +19,17 @@ export default function Header(props: TProps) {
         </LinkContainer>
         <LinkContainer>
           <CustomLink to="/page1">
-            Page1
+            Communities
           </CustomLink>
         </LinkContainer>
         <LinkContainer>
           <CustomLink to="/page2">
-            Page2
+            Sentiment Analysis
+          </CustomLink>
+        </LinkContainer>
+        <LinkContainer>
+          <CustomLink to="/page3">
+            About the project
           </CustomLink>
         </LinkContainer>
       </MainContainer>
@@ -35,7 +40,7 @@ export default function Header(props: TProps) {
 const MainContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 1.45rem 1.0875rem;
 `
 
