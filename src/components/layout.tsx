@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header"
-import { PropTypes } from "@material-ui/core"
+
+import * as style from "../style/style.css"
 
 interface IProps {
   children: any
@@ -26,7 +27,7 @@ export default function Layout(props: TProps) {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <MainContainer>
+      <MainContainer style={style}>
         <main>{children}</main>
       </MainContainer>
     </>
@@ -35,6 +36,8 @@ export default function Layout(props: TProps) {
 
 const MainContainer = styled.div`
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 0 1.0875rem 1.45rem;
 `
+
+
