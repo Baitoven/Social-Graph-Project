@@ -18,6 +18,9 @@ import community_degree_2 from "../images/2_community_degree_lin.png"
 import community_degree_3 from "../images/3_community_degree_lin.png"
 import community_degree_4 from "../images/4_community_degree_lin.png"
 import community_degree_5 from "../images/5_community_degree_lin.png"
+import correlation_matrix from "../images/correlation_matrix.png"
+import correlation_tag_link from "../images/correlation_tag_link.png"
+import normalized_correlation_tag_link from "../images/normalized_correlation_tag_link.png"
 
 type TProps = {}
 
@@ -76,10 +79,15 @@ export default function Page1(props: TProps) {
 
       <p>In the figures above, the linear and log-log distributions for each community are shown. The first three figures are pretty clear and it is visible that the distributions are really similar to those of the whole network. In fact, the linear distribtuion is a descending line, that it is neither the distribution of a random not that of a free-scale distribution. It can be seen that they are not free-scale distributions also from the relative log-log plot, that are not straight lines. As for the whole network, the distributions don't explain the topology very well. The last three images are even more confused, with the distributions that don't follow any rules in the linear plot. It is visible that the log-log plots are aranged similar to the first three, so it is plausible to assume that they indeed have a similar distribution. As a conclusion, we have discovered that the distributions of the communities are similar to that of the whole network, and as that one is difficult to find a meaning, as the properties are neither of a random nor of a scale-free network.</p>
 
-      <p>** correlation matrix goes here **</p>
+      <ImageContainer>
+        <img src={correlation_matrix} />
+      </ImageContainer>
       <p>The diagonal contains the nodes that go from community  𝑖  to community  𝑖 , so the edges inside the same community. outside of the diagonal there are the edges among different communities. It can be seen from the figure above that the diagonal contains the higher values. This is in practise a better visualisation of the modularity parameter. the partition is meaningful because there are many intra-class edges and only few inter-class edges. It is interesting to see that communities 2, 3, 4 are high correlated. In the figures above it can be seen that these communities are those with similar number of nodes and also the most common tags are similar (for example, "indie" and "adventure"). As they have similar tags, it makes sense that they are in some way correlated. Finally, it is interesting to see that the last community is not so intra-correlated. This was also visible in the visualisation of the network, in which the nodes created agglomerates but had few edges one to each other. This result leads to the fact that Louvain method tends to prefer putting nodes together instead of overpartitioning the graph.</p>
       
-      <p>** correlation between number of tags and number of links plot **</p>
+      <ImageContainer>
+        <img src={correlation_tag_link} />
+        <img src={normalized_correlation_tag_link} />
+      </ImageContainer>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
@@ -88,6 +96,5 @@ export default function Page1(props: TProps) {
 const ImageContainer = styled.div`
   justify-content: center;
   display: flex;
-  flex-direction: row;
-  //flex-wrap: wrap;
+  align-items: flex-start;
 `
