@@ -54,6 +54,6 @@ const CustomLink = styled(Link)`
   text-decoration: none;
 `
 
-const LinkContainer = styled.h1`
+const LinkContainer = styled.h2`
   margin: 0 20px 0 0;
 `
