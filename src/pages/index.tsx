@@ -4,7 +4,7 @@ import * as vis from 'vis'
 import styled from 'styled-components'
 
 import Layout from "../components/layout"
-import image1 from "../images/degree_distr.png"
+import degree_distribution from "../images/degree_distr.png"
 
 export default function IndexPage() {
   /*const { allDataJson: { edges: result1, nodes: result2} } = useStaticQuery(graphql`
@@ -423,7 +423,7 @@ export default function IndexPage() {
       <h2>General analysis of the topology</h2>
       <p>To start the analysis of the network, we wanted to study its topology, in order to understand better what we were working with. To do that, we analysed the degree distribution as well as other general properties as the average length and the average global clustering coefficient. At the end, we discovered that the properties of this network are really strange, as they don't follow none of the predictions done at each step. This confused us a lot and we think that the knowledges provided during the course are not enough to understand deeply the topology of the graph.</p>
       <ImageContainer>
-        <img src={image1} />
+        <img src={degree_distribution} />
       </ImageContainer>
       <p>degree distribution graph</p>
     </Layout>
