@@ -17,6 +17,9 @@ export default function Page3(props: TProps) {
 
       <h2>Problems on the creation of the network</h2>
       <p>In order to create the network, we decided to have games as nodes. Then, we had to decide how to create links among the games. As our goal was to find similarities among games, it was intuitive to think ways to generate edges based on the similarities, found on the tags (i.e. genres and categories). In particular, many different choice have been considered, for example to create an edge between two games if the number of equal tags between the two games were above a certain threshold. This led to the choice of a proper arbitrary threshold without ways to decide which was the best. For this reason, at the end, another approch has been used. An edge is create between two games if the similitude between them is greater than the opposition. Expressed in other words, in the number of tags in common between the two games is greater than the number of tags not in common. The process of the network creation should have been easy but, as always, the practice was different from the theory. In fact, all the attemps to build the network failed because of the big dimensions of the network itself. In particular, working on Google Colab, after 4000 edges the system crashed, because of the too many links. As the purpose of the project wasn't working on big data, it's been decided to reduce the dimension of the network in order to be able to continue the project. For this reason, it's been decided to take the 4000 most played games in this period. It is a good choice also because after this number, there are very unplayed games with few or no comments that wouldn't have been useful in the sentiment analysis.</p>
+      
+      <h2>The website</h2>
+      
       <h2>About Us</h2>
       <p>put some more text here</p>
       <Link to="/">Go back to the homepage</Link>

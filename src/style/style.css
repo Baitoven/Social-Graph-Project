@@ -1,18 +1,25 @@
 h1 {
-    font-size: xx-large;
+    font-size: 50px;
     font-family: 'Roboto Slab';  
     font-weight: 600; 
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 h2 {
     font-size: x-large;
     font-family: 'Roboto Slab';  
     font-weight: 500; 
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-p {
+p, li {
     font-family: 'Roboto Slab';  
     font-weight: 400;
+    text-align: justify;
 }
 
 /* roboto-slab-regular - latin */

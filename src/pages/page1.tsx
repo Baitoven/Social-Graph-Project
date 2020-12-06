@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
+import DialogCommunity from "../components/DialogCommunity"
 import communities_distribution from "../images/communities_distribution.png"
 import communities_graph from "../images/communities_graph.png"
 import community_graph_0 from "../images/0_community_graph.png"
@@ -46,6 +47,8 @@ export default function Page1(props: TProps) {
       
       <h2>Naming and analysing communities</h2>
       <p>The figures below shows the communities of the network with their names. It can be seen that each community is identified bu a different triplet of tags. This mean that each community has, in fact, games with different tags and so the partition is meaningful with respect to the tags.</p>
+      
+      <DialogCommunity text="some text, and also more text" communityName="community 1" />
       
       <ImageContainer>
         <img src={community_graph_0} />
