@@ -4,21 +4,9 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import DialogCommunity from "../components/DialogCommunity"
+import DialogCommunity from "../components/dialog-community"
 import communities_distribution from "../images/communities_distribution.png"
 import communities_graph from "../images/communities_graph.png"
-import community_graph_0 from "../images/0_community_graph.png"
-import community_graph_1 from "../images/1_community_graph.png"
-import community_graph_2 from "../images/2_community_graph.png"
-import community_graph_3 from "../images/3_community_graph.png"
-import community_graph_4 from "../images/4_community_graph.png"
-import community_graph_5 from "../images/5_community_graph.png"
-import community_degree_0 from "../images/0_community_degree_lin.png"
-import community_degree_1 from "../images/1_community_degree_lin.png"
-import community_degree_2 from "../images/2_community_degree_lin.png"
-import community_degree_3 from "../images/3_community_degree_lin.png"
-import community_degree_4 from "../images/4_community_degree_lin.png"
-import community_degree_5 from "../images/5_community_degree_lin.png"
 import correlation_matrix from "../images/correlation_matrix.png"
 import correlation_tag_link from "../images/correlation_tag_link.png"
 import normalized_correlation_tag_link from "../images/normalized_correlation_tag_link.png"
@@ -47,38 +35,44 @@ export default function Page1(props: TProps) {
       
       <h2>Naming and analysing communities</h2>
       <p>The figures below shows the communities of the network with their names. It can be seen that each community is identified bu a different triplet of tags. This mean that each community has, in fact, games with different tags and so the partition is meaningful with respect to the tags.</p>
+      <p>The buttons below provides more informations on the communities we spotted :</p>
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 1: "Multiplayer", "Single-Player", "PvP", "Action"`}  
+        imageSet={0}
+      />
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 2: "Single-Player", "Full controller support", "Action", "Adventure"`} 
+        imageSet={1}
+      />
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 3: "Single-Player", "Strategy", "Indie", "Simulation"`} 
+        imageSet={2}
+      />
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 4: "Single-Player", "Action", "Multi-player", "Partial Controller Support"`} 
+        imageSet={3}
+      />
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 5: "Single-Player", "Indie", "Adventure", "Action"`} 
+        imageSet={4}
+      />
+
+      <DialogCommunity 
+        text="some text, and also more text" 
+        communityName={`Community 6: "Animation & Modeling", "Design & Illustration", "Education", "Software training"`} 
+        imageSet={5}
+      />
       
-      <DialogCommunity text="some text, and also more text" communityName="community 1" />
-      
-      <ImageContainer>
-        <img src={community_graph_0} />
-        <img src={community_degree_0} />
-      </ImageContainer>
-      
-      <ImageContainer>
-        <img src={community_graph_1} />
-        <img src={community_degree_1} />
-      </ImageContainer>
-
-      <ImageContainer>
-        <img src={community_graph_2} />
-        <img src={community_degree_2} />
-      </ImageContainer>
-
-      <ImageContainer>
-        <img src={community_graph_3} />
-        <img src={community_degree_3} />
-      </ImageContainer>
-
-      <ImageContainer>
-        <img src={community_graph_4} />
-        <img src={community_degree_4} />
-      </ImageContainer>
-
-      <ImageContainer>
-        <img src={community_graph_5} />
-        <img src={community_degree_5} />
-      </ImageContainer>
 
       <p>In the figures above, the linear and log-log distributions for each community are shown. The first three figures are pretty clear and it is visible that the distributions are really similar to those of the whole network. In fact, the linear distribtuion is a descending line, that it is neither the distribution of a random not that of a free-scale distribution. It can be seen that they are not free-scale distributions also from the relative log-log plot, that are not straight lines. As for the whole network, the distributions don't explain the topology very well. The last three images are even more confused, with the distributions that don't follow any rules in the linear plot. It is visible that the log-log plots are aranged similar to the first three, so it is plausible to assume that they indeed have a similar distribution. As a conclusion, we have discovered that the distributions of the communities are similar to that of the whole network, and as that one is difficult to find a meaning, as the properties are neither of a random nor of a scale-free network.</p>
 
