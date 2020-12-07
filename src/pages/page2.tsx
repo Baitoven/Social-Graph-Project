@@ -2,8 +2,12 @@ import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import * as d3 from "d3"
 import * as d3c from "d3-cloud"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
+import comment_communities from "../images/comments_communities.png"
+import histo_words_not_sentiment from "../images/histWordsNotInSentiment.png"
+import histo_sentiment from "../images/hist_sentiment_games.png"
 
 type TProps = {}
 
@@ -60,10 +64,24 @@ export default function Page2(props: TProps) {
   return (
     <Layout>
       <h1>Sentiment analysis</h1>
-      <h2>Wordclouds</h2>
-      <h2>Analysis</h2>
-      <p>put some more text here</p>
       <div id="my_dataviz"></div>
+
+      <h2>Wordclouds</h2>
+      <p>** some text **</p>
+      <ImageContainer>
+        <img src={comment_communities} />
+      </ImageContainer>
+      <p>** some more text here **</p>
+
+      <h2>Analysis</h2>
+      <ImageContainer>
+        <img src={histo_words_not_sentiment} />
+      </ImageContainer>
+
+      <ImageContainer>
+        <img src={histo_sentiment} />
+      </ImageContainer>
+      <p>put some more text here</p>
 
       
 
@@ -71,3 +89,12 @@ export default function Page2(props: TProps) {
     </Layout>
   )
 }
+
+const ImageContainer = styled.div`
+  display: flex;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+`
