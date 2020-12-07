@@ -6,7 +6,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import DialogCommunity from "../components/dialog-community"
 import communities_distribution from "../images/communities_distribution.png"
-import communities_graph from "../images/communities_graph.png"
+import named_communities_graph from "../images/named_communities_graph.png"
 import correlation_matrix from "../images/correlation_matrix.png"
 import correlation_tag_link from "../images/correlation_tag_link.png"
 import normalized_correlation_tag_link from "../images/normalized_correlation_tag_link.png"
@@ -20,7 +20,7 @@ export default function Page1(props: TProps) {
       <p>In this section of the analysis, the communities are the protagonists. First of all, we will create them and we will visualise them. Then, some statistics are computed in order to understand better their properties. In particular....</p>
       
       <h2>Creation of the communities</h2>
-      <p> It can be seen that the score of the modularity is around 0.5, in a range between -1 and +1. This means that there is an high level of modularity, and so the communities are well defined. This is a good news as we wanted to find meaningful communities for the further analysis. In Figure (7) it can be seen that there are siz communities. In particular there are three communities with quite the same number of nodes (around 700). Then, there are two communities with respectively around 300 nodes more and less. Finally, there is one community with less than 200 nodes.</p>
+      <p>Studying the graph, we obtainthe result that the score of the modularity is around 0.5, in a range between -1 and +1. This means that there is an high level of modularity, and so the communities are well defined. This is a good news as we wanted to find meaningful communities for the further analysis. In Figure (7) it can be seen that there are siz communities. In particular there are three communities with quite the same number of nodes (around 700). Then, there are two communities with respectively around 300 nodes more and less. Finally, there is one community with less than 200 nodes.</p>
       <ImageContainer>
         <img src={communities_distribution} />
       </ImageContainer>
@@ -28,7 +28,7 @@ export default function Page1(props: TProps) {
       
       <h2>Visualisation of the communities</h2>
       <ImageContainer>
-        <img src={communities_graph} />
+        <img src={named_communities_graph} />
       </ImageContainer>
       
       <p>It can be seen from the figure above that the communities are well separated. This was predictable as the forceatlas algorithm arranges the nodes to minimize the crossing among edges, and this leads to organize the nodes by communities. In particular, it is easy to find the three communities with the same number of nodes on the top right corner, the smallest community on the bottom part of the graph, the biggest on the left and the second smallest in the top left corner. The same-dimension three communities contain the biggest nodes, those with the highest degree. The smallest community contains agglomerates of nodes, that are small nodes (i.e. low degree) but really connected one to each other.</p>

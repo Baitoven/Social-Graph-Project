@@ -48,7 +48,7 @@ const DialogTitle = (props: DialogTitleProps) => {
 type TProps = IProps;
 
 export default function CustomizedDialogs(props: TProps) {
-    const { text, communityName, imageSet, boxText } = props
+    const { text, communityName, imageSet } = props
 
     const [open, setOpen] = useState(false);
 
@@ -118,14 +118,17 @@ export default function CustomizedDialogs(props: TProps) {
             <DialogTitle onClose={handleClose}>
                 {communityName}
             </DialogTitle>
-            <DialogContent dividers>
+            <CustomDialogContent dividers>
                 <ImageContainer>
                   {selectImageSet(imageSet)}
                 </ImageContainer>
-                {text}
-            </DialogContent>
+                <BottomText>
+                  {text}
+                </BottomText>
+                
+            </CustomDialogContent>
         </CustomDialog>
-        </MainContainer>
+      </MainContainer>
     )
 }
 
@@ -175,4 +178,12 @@ const CustomButton = styled(Button)`
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
+`
+
+const CustomDialogContent = styled(DialogContent)`
+  width: 1440px;
+`
+
+const BottomText = styled.div`
+  margin: 10px 0 0;
 `
