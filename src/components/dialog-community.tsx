@@ -13,12 +13,12 @@ import community_graph_2 from "../images/2_community_graph.png"
 import community_graph_3 from "../images/3_community_graph.png"
 import community_graph_4 from "../images/4_community_graph.png"
 import community_graph_5 from "../images/5_community_graph.png"
-import community_degree_0 from "../images/0_community_degree_lin.png"
-import community_degree_1 from "../images/1_community_degree_lin.png"
-import community_degree_2 from "../images/2_community_degree_lin.png"
-import community_degree_3 from "../images/3_community_degree_lin.png"
-import community_degree_4 from "../images/4_community_degree_lin.png"
-import community_degree_5 from "../images/5_community_degree_lin.png"
+import community_degree_0 from "../images/0_community_degree.png"
+import community_degree_1 from "../images/1_community_degree.png"
+import community_degree_2 from "../images/2_community_degree.png"
+import community_degree_3 from "../images/3_community_degree.png"
+import community_degree_4 from "../images/4_community_degree.png"
+import community_degree_5 from "../images/5_community_degree.png"
 
 export interface IProps {
     communityName: string
@@ -140,7 +140,12 @@ const DialogTitleText = styled.h2`
 const ImageContainer = styled.div`
   justify-content: center;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+
+  & img {
+    width: fit-content;
+  }
 `
 
 const CustomDialog = styled(Dialog)`

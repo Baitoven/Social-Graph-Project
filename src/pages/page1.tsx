@@ -38,38 +38,38 @@ export default function Page1(props: TProps) {
       <p>The buttons below provides more informations on the communities we spotted :</p>
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 1: "Multiplayer", "Single-Player", "PvP", "Action"`}  
+        text={`This community has 448 nodes. So it is the second smallest one. The most common tags are "Remote Play Together" (405 games have this tag), "Shared/Split Screen" (311 have) and "Full controllor support" (296). So, more or less all the games of this community are online games in which you can share the screen. The most connected game is "Just Shapes & Beats".`}
+        communityName={`Community 1: "Remote Play Together", "Shared/Split Screen", "Full controller support"`}  
         imageSet={0}
       />
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 2: "Single-Player", "Full controller support", "Action", "Adventure"`} 
+        text={`This community has 1069 nodes and it is the biggest one. The most common tags are "Action" (669 games have this tag), "Online PvP" (628 have) and "PvP" (619). So, in this community there are the games action and Player Versus Player, both online and offline. These are the most popular games at the moment, as "Counter Strike". The most connected game is "Necromunda: Underhive Wars".`}
+        communityName={`Community 2: "Action", "Online PvP", "PvP"`} 
         imageSet={1}
       />
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 3: "Single-Player", "Strategy", "Indie", "Simulation"`} 
+        text={`In this community there are 740 nodes. The most common tags are "Indie" (579 games have this tag), "Strategy" (429 have) and "Casual" (370). The games in this community are mainly strategy games in an old and simple style. The most connected game is "Train Valley".`}
+        communityName={`Community 3: "Strategy", "Indie", "Casual"`} 
         imageSet={2}
       />
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 4: "Single-Player", "Action", "Multi-player", "Partial Controller Support"`} 
+        text={`In this community there are 697 nodes. The most common tags are "Action" (403 games have this tag), "Adventure" (387 have) and "Full controller support" (515). We can understand that the games in this community are games that can be played even without a keyboard (so with controllers) and are adventurous. The most connected game is "Hellblade: Senua's Sacrifice".`}
+        communityName={`Community 4: "Full controller support", "Action", "Adventure"`} 
         imageSet={3}
       />
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 5: "Single-Player", "Indie", "Adventure", "Action"`} 
+        text={`In this community there are 673 nodes. The most common tags are "Indie" (582 games have this tag), "Adventure" (416 have) and "Action" (407). The games in this community are similar to the games of the previous one, with the difference that these games are created by individuals or smaller development teams. The most connected game is "Inner silence".`}
+        communityName={`Community 5: "Indie", "Adventure", "Action"`} 
         imageSet={4}
       />
 
       <DialogCommunity 
-        text="some text, and also more text" 
-        communityName={`Community 6: "Animation & Modeling", "Design & Illustration", "Education", "Software training"`} 
+        text={`In this community there are 147 nodes. This is the smallest community and the tags are very different from the other communities. The most common tags are "Strategy" (96 games have this tag), "RPG" (47 have) and "Simulation" (23). So, the games of this community are mainly strategic role-play/simulation games. The most connected game is "Supreme Commander: Forged Alliance".`}
+        communityName={`Community 6: "Strategy", "RPG", "Simulation"`} 
         imageSet={5}
       />
       
