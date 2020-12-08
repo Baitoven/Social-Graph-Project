@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import * as d3 from "d3"
 import * as d3c from "d3-cloud"
 import styled from "styled-components"
@@ -12,10 +12,20 @@ import histo_sentiment from "../images/hist_sentiment_games.png"
 type TProps = {}
 
 export default function Page2(props: TProps) {
+  /**const { allDataAllSentiment2Json: { edges: result } } = useStaticQuery(graphql`
+    query {
+      allDataAllSentiment2Json {
+        edges {
+          node {
+            word
+            size
+          }
+        }
+      }
+    }
+  `)
   
   function render() {
-    var myWords = [{word: "Running", size: "10"}, {word: "Surfing", size: "20"}, {word: "Climbing", size: "50"}, {word: "Kiting", size: "30"}, {word: "Sailing", size: "20"}, {word: "Snowboarding", size: "60"} ]
-
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
         width = 450 - margin.left - margin.right,
         height = 450 - margin.top - margin.bottom;
@@ -29,7 +39,9 @@ export default function Page2(props: TProps) {
 
     var layout = d3c()
       .size([width, height])
-      .words(myWords.map(function(d: any) { return {text: d.word, size:d.size}; }))
+      .words(result.map((node) => {
+        return {text: node.node.word, size: node.node.size}
+      }))
       .padding(5)        //space between words
       .rotate(function() { return ~~(Math.random() * 2) * 90; })
       .fontSize(function(d) { return d.size; })      // font size of words
@@ -59,7 +71,7 @@ export default function Page2(props: TProps) {
       render()
     }, 50);
     return () => clearTimeout(timer);
-  }, []);
+  }, []);**/
   
   return (
     <Layout>
@@ -71,17 +83,23 @@ export default function Page2(props: TProps) {
       <ImageContainer>
         <img src={comment_communities} />
       </ImageContainer>
-      <p>** some more text here **</p>
+      <p>The words "good", "one", "really" and "time" where filtered out before making the word clouds as they helt a very high weight and appeared large in all the word clouds allthough the TF-IDF should have filterd them out.
+
+We see that wordclouds for the communities are very similar. We have compared the cosine similarity, a metric used to measure how similar the documents are irrespective of their size, to varify this. We can see that the cosine similarity varies between 0.88-0.96 so the document containing the comments for each community are very similar.
+
+These are some of the most notable differences: The word "fun" holds alot of weight in communities 1,2 and 3. The word "Story" holds alot of weight in communities 4 and 5. In community 6 the words "great", "best" and "first" hold alot of weight.</p>
 
       <h2>Analysis</h2>
       <ImageContainer>
         <img src={histo_words_not_sentiment} />
       </ImageContainer>
+      <p>After looking at the words we add some words to the happiness score ranking that are common and give them a score similar to similar words in the happiness score ranking.</p>
 
       <ImageContainer>
         <img src={histo_sentiment} />
       </ImageContainer>
-      <p>put some more text here</p>
+      <p>We can see that the averge sentiment is normally distributed, which is not surprising as the descriptions of the games are quite neutral.</p>
+      <p>Alot of games have 0 sentiment value. These comments are either empty, meaning tha the game didn't have any comments or that the words in the comments are not contained in the sentiment list. The third possability is that the weight defined in the API call is 0 making the total sentiment 0 according to how we defined the function above.</p>
 
       
 
