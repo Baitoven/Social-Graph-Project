@@ -172,7 +172,7 @@ const CustomIconButton = styled(IconButton)`
 `
 
 const CustomButton = styled(Button)`
-  margin: 10px 0 0;
+  margin: 10px 0 10px 0 !important;
 `
 
 const MainContainer = styled.div`
