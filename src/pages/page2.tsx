@@ -77,18 +77,13 @@ export default function Page2(props: TProps) {
   return (
     <Layout>
       <h1>Sentiment analysis</h1>
-      <p>The aim of this analysis is to get insight into the comments on steam and analyze if they differ between the communities found in the basic analysis and between genres. As the connection of the games in our networks are dependent on the genres they have in common, the community text analysis should give us some insight into weather surtain genres have more possitive comments than others. As we have 26 genres, the community analysis should allow us split the games up to fewer clusters and find commonalities within the comments of those clusters. Is it maybe the case that players of Adventure based games are more possitive than players of Action based games? We will explore these kind of patterns in this analysis.
-      We also decide to analyze the text of the descriptions of the games, to get insight into how connected games in our network have similar descriptions, and which words are the most popular when descriping a surtain cluster.</p>
+      <p>The aim of this analysis is to get insight into the comments on steam and analyze if they differ between the communities found in the basic analysis and between genres. As the connection of the games in our networks are dependent on the genres they have in common, the community text analysis should give us some insight into weather certain genres have more positive comments than others. As we have 26 genres, the community analysis should allow us to split the games up to fewer clusters and find commonalities within the comments of those clusters. Is it may be the case that players of Adventure based games are more positive than players of Action based games? We will explore this kind of patterns in this analysis. We also decide to analyze the text of the descriptions of the games, to get insight into how connected games in our network have similar descriptions, and which words are the most popular when describing a certain cluster.</p>
 
       <h2>Community wordclouds</h2>
       <ImageContainer>
         <img src={comment_communities} />
       </ImageContainer>
-      <p>The words "good", "one", "really" and "time" where filtered out before making the word clouds as they helt a very high weight and appeared large in all the word clouds allthough the TF-IDF should have filterd them out.
-
-We see that wordclouds for the communities are very similar. We have compared the cosine similarity, a metric used to measure how similar the documents are irrespective of their size, to varify this. We can see that the cosine similarity varies between 0.88-0.96 so the document containing the comments for each community are very similar.
-
-These are some of the most notable differences: The word "fun" holds alot of weight in communities 1,2 and 3. The word "Story" holds alot of weight in communities 4 and 5. In community 6 the words "great", "best" and "first" hold alot of weight.</p>
+      <p>The words "good", "one", "really" and "time" where filtered out before making the word clouds as they held a very high weight and appeared large in all the word clouds although the TF-IDF should have filtered them out. We see that wordclouds for the communities are very similar. We have compared the cosine similarity, a metric used to measure how similar the documents are irrespective of their size, to verify this. We can see that the cosine similarity varies between 0.88-0.96 so the document containing the comments for each community are very similar. These are some of the most notable differences: The word "fun" holds a lot of weight in communities 1,2 and 3. The word "Story" holds a lot of weight in communities 4 and 5. In community 6 the words "great", "best" and "first" hold a lot of weight.</p>
 
       <h2>Genre Wordclouds</h2>
       <p>These are the genres obtained from Steam API :</p>
@@ -126,11 +121,11 @@ These are some of the most notable differences: The word "fun" holds alot of wei
       <ImageContainer>
         <img src={histo_sentiment} />
       </ImageContainer>
-      <p>We can see that the averge sentiment is normally distributed, which is not surprising as the descriptions of the games are quite neutral.</p>
-      <p>Alot of games have 0 sentiment value. These comments are either empty, meaning tha the game didn't have any comments or that the words in the comments are not contained in the sentiment list. The third possability is that the weight defined in the API call is 0 making the total sentiment 0 according to how we defined the function above.</p>
+      <p>We can see that the average sentiment is normally distributed, which is not surprising as the descriptions of the games are quite neutral.</p>
+      <p>A lot of games have 0 sentiment value. These comments are either empty, meaning that the game did not have any comments or that the words in the comments are not contained in the sentiment list. The third possibility is that the weight defined in the API call is 0 making the total sentiment 0 according to how we defined the function above.</p>
 
-      <p>We wanted to see if we could see similarities between the comments in communites. As we have 26 different genres, we expected the comments between genres to vary. We saw from part 2 that the comments between certain genres vary but not drasticly. As there are 26 genres we wanted to explore if we could split similar genre based games up to fewer clusters, communities, and analyze the comments in those clusters. As our analysis has shown both the sentiment rate and the content of the comments do not vary between communities and no hypothesis can be made after the analysis.</p>
-      <p>The analysis on the short description of the games on the other hand showed that the description of games within communites contain similarites and that similar words are used to descripe games within these communites. From that we can conclude that the games within the communites are similar in there description, and therefor similar types of games.</p>
+      <p>We wanted to see if we could see similarities between the comments in communities. As we have 26 different genres, we expected the comments between genres to vary. We saw from part 2 that the comments between certain genres vary but not drastically. As there are 26 genres we wanted to explore if we could split similar genre-based games up to fewer clusters, communities, and analyze the comments in those clusters. As our analysis has shown both the sentiment rate and the content of the comments do not vary between communities and no hypothesis can be made after the analysis.</p>
+      <p>The analysis on the short description of the games on the other hand showed that the description of games within communities contain similarities and that similar words are used to describe games within these communities. From that we can conclude that the games within the communities are similar in their description, and therefor similar types of games.</p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
