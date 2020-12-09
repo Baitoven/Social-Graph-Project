@@ -23,8 +23,9 @@ export default function Page3(props: TProps) {
       <p>All of this website code is available in <a href="https://github.com/Baitoven/Social-Graph-Project">this GitHub repository</a>, and all of the Python code used for data processing is available from the download link below :</p>
       
       <ul>
-        <li><a href={"notebooks.zip"} download>The netbooks over creation and use of the network</a></li>
-        <li><a href="https://drive.google.com/file/d/1Npeslwxk8MOX6ZJRCkX6KH7p_291jMXI/view?usp=sharing">The datasets we used, retrieve using Steam API</a></li>
+        <li><a href="https://colab.research.google.com/drive/10G5YivIR2-3_cTwpsidr1Mk_jJmSnENn?usp=sharing">The notebook over creation and use of the network</a></li>
+        <li><a href="https://colab.research.google.com/drive/1YOMsTXcJzG0or0sQ9uzWfjOitZChVfzd?usp=sharing">The notebook over sentiment analysis</a></li>
+        <li><a href="https://drive.google.com/file/d/1Npeslwxk8MOX6ZJRCkX6KH7p_291jMXI/view?usp=sharing">The datasets we used, retrieved using Steam API</a></li>
       </ul>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
