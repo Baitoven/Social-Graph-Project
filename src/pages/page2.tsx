@@ -91,6 +91,7 @@ We see that wordclouds for the communities are very similar. We have compared th
 These are some of the most notable differences: The word "fun" holds alot of weight in communities 1,2 and 3. The word "Story" holds alot of weight in communities 4 and 5. In community 6 the words "great", "best" and "first" hold alot of weight.</p>
 
       <h2>Genre Wordclouds</h2>
+      <p>These are the genres obtained from Steam API :</p>
       <GenreContainer>
         <GenreDialogs imageSet="action" />
         <GenreDialogs imageSet="adventure" />
