@@ -5,9 +5,11 @@ import * as d3c from "d3-cloud"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import comment_communities from "../images/comments_communities.png"
+import wordclouds from "../images/WordClouds.png"
+import shortdescription from "../images/short-descriptions.png"
 import histo_words_not_sentiment from "../images/histWordsNotInSentiment.png"
 import histo_sentiment from "../images/hist_sentiment_games.png"
+import histallsentiment from "../images/hist-all-sentiment.png"
 import GenreDialogs from "../components/dialog-genre"
 
 type TProps = {}
@@ -81,9 +83,24 @@ export default function Page2(props: TProps) {
 
       <h2>Community wordclouds</h2>
       <ImageContainer>
-        <img src={comment_communities} />
+        <img src={wordclouds} />
       </ImageContainer>
       <p>The words "good", "one", "really" and "time" where filtered out before making the word clouds as they held a very high weight and appeared large in all the word clouds although the TF-IDF should have filtered them out. We see that wordclouds for the communities are very similar. We have compared the cosine similarity, a metric used to measure how similar the documents are irrespective of their size, to verify this. We can see that the cosine similarity varies between 0.88-0.96 so the document containing the comments for each community are very similar. These are some of the most notable differences: The word "fun" holds a lot of weight in communities 1,2 and 3. The word "Story" holds a lot of weight in communities 4 and 5. In community 6 the words "great", "best" and "first" hold a lot of weight.</p>
+
+      <h2>Short Description Wordclouds</h2>
+      <ImageContainer>
+        <img src={shortdescription} />
+      </ImageContainer>
+      <p>These word clouds for the short description of the games give more significant results than the wordclouds for the comments plotted above. 
+Let's go over each community: </p>
+      <p>1. Here we can see that the words "mode", "online", "mulitplayer" and "friends" carry much weight so we assume the games within this community are multiplayer games that you can play onlne with your friends.
+These resaults clearly match the most common tags within the comunity from the basic statisics: 'Remote Play Together', 'Shared/Split Screen', 'Full controller support'.</p>
+      <p>2. "experience", "unique", "team", "battle" carry alot of weight so these games could be battle games that you play in teams.
+These resaults clearly match the most common tags within the comunity from the basic statisics: 'Action', 'Online PvP', 'PvP' (PvP = Player versus Player) </p>
+      <p>3. "Build", "Create", "make", "unique", "different" carry alot of weight here so the games in this community are crafting games, focusing on building and creating. This maches the most comman tags from the basic statistics: 'Indie', 'Strategy', 'Casual'. </p>
+      <p>4. The words "Story", "experience", "combat", "unique" and "characters" are heavy here, suggesting games that have a storyline where you experence playing different and unique characters, maching the most common tags from the basic statistics: 'Full controller support', 'Action', 'Adventure'.</p>
+      <p>5. The words "find", "enimies", "story", "levels" are heavy here suggesting games that are adventurous containing some kind of story and charcters, matching the most common tags from the basic statistics: 'Indie', 'Adventure', 'Action'.</p>
+      <p>6. The words "War" ,"battle", "units" carry alot of weight here so we assume that this cumminity cointains strategy games. For example, many strategy games have hero or officer units that can improve the morale and combat performance of friendly units around them. These resaults also clearly match the most common tags from the basic statistics: 'Strategy', 'RPG', 'Simulation' (RPG = Role Playing Games)</p>
 
       <h2>Genre Wordclouds</h2>
       <p>These are the genres obtained from Steam API :</p>
@@ -112,15 +129,20 @@ export default function Page2(props: TProps) {
       </GenreContainer>
       <p>These word clouds are more conclusive than the once between the communities. We see clearly here what words vary most between the comments in the genres. E.g. the comments in the "video Production" genre uses words like "effects", "software", "program" more frequently than in the other genres. The genre "Adventure" uses words like "story", "fun" and "great", more frequently than the other genres. There are 26 genres so we will not discuss them all but all of the wordclouds make sense regarding that specific genre.</p>
       
+      
+
       <h2>Analysis</h2>
+      <p>The journal happiness score list will be used to assign the words in the comments a rating  for sentiment analysis.  Many words are not ranked in that list so we will look into that below.</p>
+      <p>Let's look at the most common words that are not defined in the happiness ranking :</p>
       <ImageContainer>
         <img src={histo_words_not_sentiment} />
       </ImageContainer>
       <p>After looking at the words we add some words to the happiness score ranking that are common and give them a score similar to similar words in the happiness score ranking.</p>
 
-      <ImageContainer>
+      <CustomImgContainer>
         <img src={histo_sentiment} />
-      </ImageContainer>
+        <img src={histallsentiment} />
+      </CustomImgContainer>
       <p>We can see that the average sentiment is normally distributed, which is not surprising as the descriptions of the games are quite neutral.</p>
       <p>A lot of games have 0 sentiment value. These comments are either empty, meaning that the game did not have any comments or that the words in the comments are not contained in the sentiment list. The third possibility is that the weight defined in the API call is 0 making the total sentiment 0 according to how we defined the function above.</p>
 
@@ -143,4 +165,12 @@ const ImageContainer = styled.div`
 const GenreContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+`
+
+const CustomImgContainer = styled.div`
+  display: flex;
+
+  & img {
+    width: 50%;
+  }
 `
