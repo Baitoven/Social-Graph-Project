@@ -20,20 +20,11 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
-    `gatsby-transformer-json`,
     `gatsby-transformer-typescript-css-modules`,
   ],
 }
